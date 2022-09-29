@@ -3,10 +3,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'package:my_campus/providers/auth.dart';
-import 'package:my_campus/screens/register_screen.dart';
+import 'package:my_campus/screens/register/register_screen.dart';
 import 'package:my_campus/themes/app_theme.dart';
 
-import 'screens/login_screen.dart';
+import 'screens/login/login_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/loading_screen.dart';
 
@@ -43,16 +43,16 @@ class _MainAppState extends ConsumerState<MainApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'MyCampus',
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
       darkTheme: AppThemes.darkTheme(),
       theme: AppThemes.lightTheme(),
-      debugShowCheckedModeBanner: false,
       home: const AuthChecker(),
       routes: {
-        LogInScreen.routename: (context) => const LogInScreen(),
-        HomeScreen.routename: (context) => const HomeScreen(),
-        RegisterScreen.routename: (context) => const RegisterScreen(),
+        RegisterScreen.routeName: (context) => const RegisterScreen(),
+        LogInScreen.routeName: (context) => const LogInScreen(),
+        HomeScreen.routeName: (context) => const HomeScreen(),
       },
+      debugShowCheckedModeBanner: false,
     );
   }
 }

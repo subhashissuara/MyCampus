@@ -41,6 +41,7 @@ dependencies:
   flutter_hex_color: ^2.0.0
   font_awesome_flutter: ^10.2.1
   flutter_dotenv: ^5.0.2
+  auto_size_text: ^3.0.0
 
 dev_dependencies:
   flutter_test:

@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'package:my_campus/screens/login_screen.dart';
+import 'package:my_campus/screens/login/login_screen.dart';
 import 'package:my_campus/providers/auth.dart';
 import 'package:my_campus/themes/app_theme.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
-  static const routename = '/HomeScreen';
+  static const routeName = '/HomeScreen';
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
@@ -20,7 +20,7 @@ class HomeScreen extends ConsumerStatefulWidget {
 class _HomeScreenState extends ConsumerState<HomeScreen> {
   Future<void> _onPressedFunction() async {
     ref.read(authProvider).logout();
-    Navigator.of(context).pushReplacementNamed(LogInScreen.routename);
+    Navigator.of(context).pushReplacementNamed(LogInScreen.routeName);
   }
 
   @override
