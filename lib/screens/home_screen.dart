@@ -19,7 +19,7 @@ class HomeScreen extends ConsumerStatefulWidget {
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
   Future<void> _onPressedFunction() async {
-    ref.read(authProvider).logout();
+    await ref.read(authProvider).logout();
     Navigator.of(context).pushReplacementNamed(LogInScreen.routeName);
   }
 

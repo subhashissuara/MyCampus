@@ -18,6 +18,7 @@ class RegisterScreen extends StatelessWidget {
         alignment: Alignment.center,
         child: const SafeArea(
           child: SingleChildScrollView(
+            reverse: true,
             child: Responsive(
               mobile: MobileLoginScreen(),
               desktop: DesktopLogInWidget(),

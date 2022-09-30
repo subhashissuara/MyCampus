@@ -108,7 +108,7 @@ class _LogInFormWidgetState extends ConsumerState<LogInFormWidget> {
               Container(
                 margin: const EdgeInsets.only(left: 5),
                 child: AutoSizeText("Welcome Back,",
-                    style: Theme.of(context).textTheme.headline3!, maxLines: 1),
+                    style: Theme.of(context).textTheme.headline4!, maxLines: 1),
               ),
               Container(
                 margin: const EdgeInsets.only(left: 7),
@@ -172,12 +172,13 @@ class _LogInFormWidgetState extends ConsumerState<LogInFormWidget> {
                     tag: "login_btn",
                     child: ElevatedButton(
                       onPressed: _onPressedFunction,
-                      child: Text(
+                      child: AutoSizeText(
                         "Log In",
                         style: Theme.of(context)
                             .textTheme
                             .button
                             ?.merge(const TextStyle(color: Colors.white)),
+                        maxLines: 1,
                       ),
                     ),
                   ),
@@ -211,6 +212,7 @@ class _LogInFormWidgetState extends ConsumerState<LogInFormWidget> {
             ],
           ),
           const SizedBox(height: defaultSpacing),
+          SizedBox(height: MediaQuery.of(context).viewInsets.bottom),
         ],
       ),
     );

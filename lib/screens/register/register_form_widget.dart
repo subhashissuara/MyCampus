@@ -1,5 +1,5 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:appwrite/appwrite.dart';
 
@@ -115,7 +115,7 @@ class _RegisterFormWidgetState extends ConsumerState<RegisterFormWidget> {
                 margin: const EdgeInsets.only(left: 5),
                 child: AutoSizeText(
                   "Hi There,",
-                  style: Theme.of(context).textTheme.headline3!,
+                  style: Theme.of(context).textTheme.headline4!,
                   maxLines: 1,
                 ),
               ),
@@ -192,7 +192,7 @@ class _RegisterFormWidgetState extends ConsumerState<RegisterFormWidget> {
           const SizedBox(height: defaultSpacing),
           TextFormField(
             controller: _password,
-            textInputAction: TextInputAction.done,
+            textInputAction: TextInputAction.next,
             obscureText: true,
             cursorColor: kPrimaryColor,
             decoration: const InputDecoration(
@@ -240,12 +240,13 @@ class _RegisterFormWidgetState extends ConsumerState<RegisterFormWidget> {
                     tag: "sign_up_btn",
                     child: ElevatedButton(
                       onPressed: _onPressedFunction,
-                      child: Text(
+                      child: AutoSizeText(
                         "Sign Up",
                         style: Theme.of(context)
                             .textTheme
                             .button
                             ?.merge(const TextStyle(color: Colors.white)),
+                        maxLines: 1,
                       ),
                     ),
                   ),
@@ -279,6 +280,7 @@ class _RegisterFormWidgetState extends ConsumerState<RegisterFormWidget> {
             ],
           ),
           const SizedBox(height: defaultSpacing),
+          SizedBox(height: MediaQuery.of(context).viewInsets.bottom),
         ],
       ),
     );
